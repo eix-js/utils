@@ -1,5 +1,6 @@
 import { Singleton } from "../src/singleton"
 import { expect } from "chai"
+import { debugKey } from "../src/keys";
 
 describe("Singleton", () => {
     it("should serve the same objecct when create multiple times", () => {
@@ -35,4 +36,22 @@ describe("Singleton", () => {
             .to.be.equal(100)
             .to.not.be.equal(200)
     })
+
+    it("should work in debug mode", () => {
+        //create class
+        @Singleton
+        class TestClass {
+            [debugKey] = true
+
+            constructor() { }
+        }
+
+        //create 2 instances
+        const a = new TestClass()
+        const b = new TestClass()
+
+        //should be the same
+        expect(a, "Both objects should be the exact same instance").not.to.be.equal(b)
+    })
 })
+
