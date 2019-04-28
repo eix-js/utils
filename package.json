@@ -4,7 +4,7 @@
   "description": "various decorators for the eix game engine",
   "main": "dist/src/main",
   "scripts": {
-    "prepare":"tsc",
+    "prepare": "tsc",
     "test": "mocha",
     "build": "tsc"
   },
