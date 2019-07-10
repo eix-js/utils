@@ -85,7 +85,7 @@ console.log(a === c) // false
 ```
 
 ### CacheInstancesByKey
-This is a variation of the CacheInstances decorator. It caches instances by saving in a lru cache using a murmur3 hash as the key. Overall this is more efficient, and should be always used if possible. 
+This is a variation of the CacheInstances decorator. It caches instances by saving in a lru cache using a hash as the key. Overall this is more efficient, and should be always used if possible. 
 
 > Note: This assumes the first argument is a string
 

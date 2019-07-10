@@ -12,7 +12,7 @@
 		"moduleResolution": "Node",
 		"experimentalDecorators": true,
 		"downlevelIteration": true,
-		"target": "esnext",
+		"target": "es6",
 		"declaration": true,
 		"module": "esnext",
 		"noUnusedLocals": true,

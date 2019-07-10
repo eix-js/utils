@@ -2,7 +2,7 @@ export type HashFunction<T> = (data: T) => bigint
 
 export class BitFieldBloomFilter<T> {
     private functions: HashFunction<T>[]
-    private memory = 0n
+    private memory = BigInt(0)
 
     public constructor(...functions: HashFunction<T>[]) {
         this.functions = functions
@@ -12,7 +12,7 @@ export class BitFieldBloomFilter<T> {
         for (const value of data) {
             for (const hashingFunctions of this.functions) {
                 const position = hashingFunctions(value)
-                this.memory = this.memory | (1n << position)
+                this.memory = this.memory | (BigInt(1) << position)
             }
         }
 
@@ -23,7 +23,7 @@ export class BitFieldBloomFilter<T> {
         for (const hashingFunctions of this.functions) {
             const position = hashingFunctions(data)
 
-            if (this.memory & (1n << position)) continue
+            if (this.memory & (BigInt(1) << position)) continue
             return false
         }
 
