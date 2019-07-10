@@ -5,12 +5,12 @@ describe('The BitFieldBloomFilter instance', () => {
     it('should work with a simple hash function', () => {
         const instance = new BitFieldBloomFilter<bigint>(data => data)
 
-        instance.add(1n, 7n)
+        instance.add(BigInt(1), BigInt(7))
 
-        expect(instance.test(1n)).to.be.true
-        expect(instance.test(7n)).to.be.true
-        expect(instance.test(3n)).to.be.false
-        expect(instance.test(5n)).to.be.false
+        expect(instance.test(BigInt(1))).to.be.true
+        expect(instance.test(BigInt(7))).to.be.true
+        expect(instance.test(BigInt(3))).to.be.false
+        expect(instance.test(BigInt(5))).to.be.false
     })
     it('should work with more then one hash function', () => {
         const instance = new BitFieldBloomFilter<string>(
