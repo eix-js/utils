@@ -1,7 +1,7 @@
 import { InstanceStore } from '../classes/InstanceStore'
 
-export const CacheResults = <T>(paramCount: number = Infinity) => {
-    const memory = new InstanceStore<T>()
+export const CacheResults = <T>(paramCount = Infinity, limit = Infinity) => {
+    const memory = new InstanceStore<T>(limit)
 
     return (target: unknown, key: unknown, descriptior: PropertyDescriptor) => {
         const method: (...args: unknown[]) => T = descriptior.value

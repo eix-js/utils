@@ -8,11 +8,17 @@ export interface InstanceData<T> {
 export class InstanceStore<T> {
     private instances: InstanceData<T>[] = []
 
+    public constructor(public limit = Infinity) {}
+
     public add(parameters: unknown[], instance: T) {
         this.instances.push({
             parameters,
             instance
         })
+
+        if (this.instances.length > this.limit) {
+            this.instances.shift()
+        }
     }
 
     public get(parameters: unknown[]): T | null {

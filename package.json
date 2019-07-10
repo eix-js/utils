@@ -1,6 +1,7 @@
 {
 	"name": "@eix-js/utils",
 	"version": "0.0.2",
+	"private": false,
 	"description": "Various decorators for the eix game engine.",
 	"main": "dist/bundle.cjs.js",
 	"module": "dist/bundle.esm.js",
@@ -14,7 +15,8 @@
 		"docs": "typedoc --out docs ./src",
 		"prebuild": "rimraf dist",
 		"build": "rollup -c",
-		"postbuild": "tsc --emitDeclarationOnly"
+		"postbuild": "tsc --emitDeclarationOnly",
+		"deploy": "npm run build && npm publish --access public"
 	},
 	"husky": {
 		"hooks": {
