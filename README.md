@@ -13,7 +13,6 @@ npm i @eix-js/utils
 
 You also need to include `"experimentalDecorators": true` in your tsconfig.json.
 
-
 ## Singleton
 To use the singleton pattern, you can just create a class, and use the @Singleton decorator:
 
@@ -37,8 +36,16 @@ console.log(b.prop) // 100
 console.log(a == b) //true
 ```
 
-## CacheResults
+## Caching
+
+The following decorators are all used to cache results of stuff:
+
+### CacheResults
 The CacheResults decorator is used to cache the results of methods:
+
+
+> Note: none of these works with default arguments
+
 
 ```ts
 import { CacheResults } from "@eix-js/utils"
@@ -61,9 +68,7 @@ console.log(instance.foo(1) === instance.foo(1)) // true
 console.log(runCount) // 1
 ```
 
-> Note: this doesn't work with default arguments
-
-## CacheInstances
+### CacheInstances
 
 ```ts
 @CacheInstances()
@@ -79,7 +84,24 @@ console.log(a === b) // true
 console.log(a === c) // false
 ```
 
-> Note: this doesn't work with default arguments
+### CacheInstancesByKey
+This is a variation of the CacheInstances decorator. It caches instances by saving in a lru cache using a murmur3 hash as the key. Overall this is more efficient, and should be always used if possible. 
+
+> Note: This assumes the first argument is a string
+
+```ts
+@CacheInstancesByKey()
+class Foo {
+    public constructor(public bar: string) { }
+}
+
+const a = new Foo('goo')
+const b = new Foo('goo')
+const c = new Foo('foo-bar-goo)
+
+console.log(a === b) // true
+console.log(b === c) // false
+```
 
 # Playing with the source:
 Run `npm test` to run the tests and `npm run build` to build.
