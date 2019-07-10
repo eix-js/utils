@@ -1,4 +1,4 @@
--r ts-node/register
+-r ./test/tshook.js
 -r source-map-support/register
 --recursive
 ./test/**/*.test.ts

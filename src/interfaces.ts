@@ -1,1 +1,0 @@
-export type decorable = {new(...args:any[]):{}}

@@ -1,35 +1,28 @@
 {
-    "compilerOptions": {
-        "baseUrl": ".",
-        "paths": {
-            "*": [
-                "types/*"
-            ]
-        },
-        "removeComments": true,
-        "sourceMap": true,
-        "lib": [
-            "es2015",
-            "es2017",
-            "dom"
-        ],
-        "esModuleInterop": true,
-        "noImplicitAny": true,
-        "alwaysStrict": true,
-        "moduleResolution": "Node",
-        "downlevelIteration": true,
-        "target": "es2017",
-        "outDir": "dist",
-        "declaration": true,
-        "module": "commonjs",
-        "experimentalDecorators": true
-    },
-    "include": [
-        "src",
-        "test"
-    ],
-    "exclude": [
-        "node_modules",
-        "dist"
-    ]
+	"compilerOptions": {
+		"baseUrl": ".",
+		"paths": {
+			"*": ["types/*"]
+		},
+		"removeComments": true,
+		"sourceMap": true,
+		"lib": ["es2015", "es2017", "dom"],
+		"noImplicitAny": true,
+		"alwaysStrict": true,
+		"moduleResolution": "Node",
+		"experimentalDecorators": true,
+		"downlevelIteration": true,
+		"target": "ESNext",
+		"declaration": true,
+		"module": "esnext",
+		"noUnusedLocals": true,
+		"esModuleInterop": true,
+		"outDir": "dist"
+	},
+	"typedocOptions": {
+		"out": "./docs",
+		"theme": "./node_modules/typedoc-vortex-theme/bin/default"
+	},
+	"include": ["src", "test"],
+	"exclude": ["node_modules", "dist"]
 }
