@@ -1,6 +1,6 @@
 {
 	"name": "@eix-js/utils",
-	"version": "0.0.4",
+	"version": "0.0.5",
 	"private": false,
 	"description": "Various decorators for the eix game engine.",
 	"main": "dist/bundle.cjs.js",
