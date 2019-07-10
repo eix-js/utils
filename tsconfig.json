@@ -24,6 +24,6 @@
 		"out": "./docs",
 		"theme": "./node_modules/typedoc-vortex-theme/bin/default"
 	},
-	"include": ["src", "test"],
+	"include": ["src"],
 	"exclude": ["node_modules", "dist"]
 }
