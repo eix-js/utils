@@ -97,7 +97,7 @@ class Foo {
 
 const a = new Foo('goo')
 const b = new Foo('goo')
-const c = new Foo('foo-bar-goo)
+const c = new Foo('foo-bar-goo')
 
 console.log(a === b) // true
 console.log(b === c) // false
